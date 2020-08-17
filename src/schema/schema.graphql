@@ -1,0 +1,9 @@
+type Movie {
+    id: ID!
+    title: String
+    genres: [String]
+}
+
+type Query {
+    movies: [Movie]
+}

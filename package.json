@@ -1,0 +1,27 @@
+{
+  "name": "movielens_graphql",
+  "version": "1.0.0",
+  "description": "Graphql implementation of MovieLens Dataset",
+  "scripts": {
+    "build": "tsc && copyfiles src/schema/schema.graphql dist --up 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js"
+  },
+  "author": "Hannes Kimara",
+  "dependencies": {
+    "apollo-server": "^2.16.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "mongodb": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.7",
+    "concurrently": "^5.3.0",
+    "copyfiles": "^2.3.0",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
+}
