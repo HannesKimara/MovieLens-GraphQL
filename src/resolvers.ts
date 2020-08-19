@@ -1,13 +1,16 @@
+import { Movie } from './models/movie';
+
 export const resolvers = {
     Query : {
-        movies: () => {
+        movies: async () => {
+            const movie = await Movie.findOne({}, 'movieId title genres');
             return [
                 {
-                    id: 1, 
-                    title: 'Toy Story',
-                    genres: 'Adventure|Animation|Children|Comedy|Fantasy'.split('|')
+                    'id': movie.movieId,
+                    'title': movie.title,
+                    'genres': movie.genres.split('|')
                 }
-            ]
+            ];
         }
     }
 }

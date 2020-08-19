@@ -9,15 +9,17 @@
   },
   "author": "Hannes Kimara",
   "dependencies": {
-    "apollo-server": "^2.16.1",
+    "apollo-server-express": "^2.16.1",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "graphql": "^15.3.0",
-    "mongodb": "^3.6.0"
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.10.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "@types/express": "^4.17.7",
+    "@types/mongodb": "^3.5.26",
     "concurrently": "^5.3.0",
     "copyfiles": "^2.3.0",
     "nodemon": "^2.0.4",
