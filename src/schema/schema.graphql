@@ -1,9 +1,28 @@
+type Link {
+    imdbId: ID
+    tmdbId: ID
+}
+
+type Rating {
+    userId: ID
+    rating: Int
+    timestamp: Int
+}
+
+type Tag {
+    userId: ID
+    tag: String
+    timestamp: Int
+}
+
 type Movie {
-    id: ID!
+    id: ID
     title: String
     genres: [String]
+    links : Link
 }
 
 type Query {
     movies: [Movie]
+    ratings(movieId: ID!): [Rating]
 }

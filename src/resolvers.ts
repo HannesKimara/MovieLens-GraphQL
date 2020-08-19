@@ -1,4 +1,5 @@
 import { Movie } from './models/movie';
+import { Link } from './models/link';
 
 export const resolvers = {
     Query : {
@@ -11,6 +12,15 @@ export const resolvers = {
                     'genres': movie.genres.split('|')
                 }
             ];
+        }
+    },
+    Movie: {
+        links: async (root: any) => {
+            const link = await Link.findOne({movieId: root.id}, 'imdbId tmdbId');
+            return {
+                'imdbId': link.imdbId,
+                'tmdbId': link.tmdbId
+            }
         }
     }
 }
