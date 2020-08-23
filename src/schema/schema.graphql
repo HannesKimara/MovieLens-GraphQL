@@ -10,7 +10,7 @@ type Rating {
 }
 
 type Tag {
-    userId: ID
+    userId: String
     tag: String
     timestamp: Int
 }
@@ -18,11 +18,13 @@ type Tag {
 type Movie {
     id: ID
     title: String
-    genres: [String]
+    genres: String
     links : Link
+    tags(limit: Int, skip: Int): [Tag]
+    ratings(limit: Int, skip: Int): [Rating]
 }
 
 type Query {
-    movies: [Movie]
+    movies(limit: Int, skip: Int): [Movie]
     ratings(movieId: ID!): [Rating]
 }

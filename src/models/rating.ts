@@ -7,4 +7,4 @@ const RatingSchema = mongoose.Schema({
     timestamp: Number
 })
 
-export const Rating = mongoose.model('Rating', RatingSchema);
+export const Rating = mongoose.model('Rating', RatingSchema, 'ratings');

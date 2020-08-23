@@ -8,7 +8,6 @@ import { DocumentNode } from 'graphql';
 import { app } from './server/server';
 
 const mongoose = require('mongoose');
-const morgan = require('morgan');
 
 mongoose.connect(MONGO_URL, 
     {
@@ -21,11 +20,16 @@ mongoose.connect(MONGO_URL,
 const rawSchema: string = readFileSync(path.join(__dirname, 'schema/schema.graphql'), {encoding: 'utf-8'});
 const typeDefs: DocumentNode = gql(rawSchema);
 
-const server: ApolloServer = new ApolloServer({ typeDefs, resolvers });
+const server: ApolloServer = new ApolloServer(
+    {   
+        typeDefs: typeDefs,
+        resolvers: resolvers,
+    }
+);
 
-app.use(morgan('dev'));
 server.applyMiddleware({
-    app: app
+    app: app,
+    path: '/graph'
 });
 
 app.listen(PORT, () => {
