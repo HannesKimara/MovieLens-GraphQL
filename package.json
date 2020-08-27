@@ -3,25 +3,32 @@
   "version": "1.0.0",
   "description": "Graphql implementation of MovieLens Dataset",
   "scripts": {
-    "build": "tsc && copyfiles src/schema/schema.graphql dist --up 1",
+    "build": "tsc && npm run copy && npm run parcel",
+    "copy": "copyfiles src/schema/schema.graphql dist --up 1 && copyfiles src/views/* dist/ --up 1 && copyfiles src/public/css/* dist/ --up 1 && copyfiles src/public/assets/* dist/ --up 1",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "parcel": "parcel build src/public/js/main.ts -d dist/public/js",
     "start": "node dist/index.js"
   },
   "author": "Hannes Kimara",
   "dependencies": {
     "apollo-server-express": "^2.16.1",
     "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "graphql": "^15.3.0",
     "joi": "^17.2.1",
+    "materialize-css": "^1.0.0",
     "mongoose": "^5.10.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "tsparticles": "^1.17.9"
   },
   "devDependencies": {
+    "@2fd/graphdoc": "^2.4.0",
     "@types/mongodb": "^3.5.26",
     "concurrently": "^5.3.0",
     "copyfiles": "^2.3.0",
     "nodemon": "^2.0.4",
+    "parcel": "^1.12.4",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   }

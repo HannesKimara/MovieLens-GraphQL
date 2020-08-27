@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MovieLens Graphql</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="shortcut icon" href="assets/favicon.png">
+<body>
+    <nav class="z-depth-0">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo" style="padding-left:1rem">MG</a>
+        <a href="" data-target="mobile-side" class="sidenav-trigger white-text"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/docs" class="docs-li">Docs</a></li>
+          <li><a href="/graph" target="blank" class="play-li">GraphQL Playground</a></li>
+        </ul>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-side">
+      <li><a href="/docs">Docs</a></li>
+      <li><a href="/graph">GraphQL Playground</a></li>
+    </ul>
+    <div class="ml-screen-full">
+      <div class="row" style="margin-bottom: 0;">
+        <div class="col l6 m6 s12 valign-wrapper" style="height: calc(100vh - 64px);">
+            <div class="valign container">
+                <h2 class="center white-text">Explore MovieLens Dataset</h2>
+                <br />
+                <div class="container center">
+                  <a class="waves-effect waves-light btn ml-gs-button" href="/graph">Get Started</a>
+                  <a class="waves-effect waves-light btn ml-docs-button" href="/docs">Docs</a>
+                </div>
+            </div>
+        </div>
+        <div class="col l6 m6 s12 ml-screen-full hide-on-small-only">
+          <div class="valign" id="tsparticles" style="height: calc(95vh - 64px);">
+          </div>
+        </div>
+      </div>
+  </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

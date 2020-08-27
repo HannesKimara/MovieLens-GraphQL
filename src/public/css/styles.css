@@ -1,0 +1,22 @@
+html {
+    background-color: #13161f;
+}
+
+nav {
+    background-color: #13161f!important;
+}
+
+.ml-screen-full{
+    min-height: calc(100vh - 64px);
+}
+
+.ml-gs-button {
+    background-color: palevioletred!important;
+    border-radius: 1px!important;
+}
+
+.ml-docs-button {
+    background-color: inherit!important;
+    border: 1px solid palevioletred!important;
+    border-radius: 1px!important;
+}
