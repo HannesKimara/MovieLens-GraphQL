@@ -2,7 +2,7 @@ import { ApolloServer, gql } from 'apollo-server-express';
 import { readFileSync } from 'fs';
 import * as path from 'path';
 
-import { PORT, MONGO_URL } from './config/config';
+import { PORT, MONGO_URL, APOLLO_PLAYGROUND } from './config/config';
 import { resolvers } from './resolvers'
 import { DocumentNode } from 'graphql';
 import { app } from './server/server';
@@ -26,6 +26,7 @@ const server: ApolloServer = new ApolloServer(
     {   
         typeDefs: typeDefs,
         resolvers: resolvers,
+        playground: true
     }
 );
 
