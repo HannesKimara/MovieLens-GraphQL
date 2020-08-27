@@ -5,7 +5,7 @@ type Link {
 
 type Rating {
     userId: ID
-    rating: Int
+    rating: Float
     timestamp: Int
 }
 
