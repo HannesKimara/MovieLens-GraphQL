@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - mongo_data_mg:/data/db
+  api:
+    build: .
+    image: hanneskimara/movielens_graphql
+    container_name: movielens_graphql
+    env_file: ./.env
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      - mongo
+    
+volumes:
+  mongo_data_mg:
+    external: false
